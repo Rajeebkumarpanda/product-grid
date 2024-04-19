@@ -13,11 +13,11 @@ This project displays a grid of product cells using Next.js, TypeScript, and Mat
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/nextjs-product-grid.git
+git clone https://github.com/Rajeebkumarpanda/product-grid.git
 
 2. Navigate into the project directory:
 
-cd nextjs-product-grid
+cd product-grid
 
 3. Install dependencies:
 
