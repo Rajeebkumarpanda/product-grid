@@ -1,8 +1,7 @@
-"use client"
-import { Product, ProductCellProps } from "@/types/type";
+"use client";
+import { ProductCellProps } from "@/types/type";
 import { TableCell } from "@mui/material";
-
-
+import Image from "next/image";
 
 const ProductCell: React.FC<ProductCellProps> = ({
   product,
@@ -23,21 +22,30 @@ const ProductCell: React.FC<ProductCellProps> = ({
         border: "1px solid white",
         cursor: "pointer",
         position: "relative",
+        overflow: "hidden",
       }}
       tabIndex={0}
     >
-      {product && (
-        <img
-          src={product.image}
-          alt={product.title}
-          style={{
-            display: isFocused || isSelected ? "block" : "none",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-        />
-      )}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          display: isFocused || isSelected ? "block" : "none",
+        }}
+      >
+        {product && (
+          <Image
+            src={product.image}
+            alt={product.title}
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        )}
+      </div>
     </TableCell>
   );
 };

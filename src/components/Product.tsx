@@ -1,11 +1,9 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ProductGrid from "./ProductGrid";
 import { Product } from "@/types/type";
 import { BaseUrl } from "@/utils/baseUrl";
-
-
 
 const ProductComponent: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -56,13 +54,19 @@ const ProductComponent: React.FC = () => {
   };
 
   return (
-    <ProductGrid
-      products={products}
-      selectedProduct={selectedProduct}
-      focusedCell={focusedCell}
-      handleCellClick={handleCellClick}
-      handleCellKeyDown={handleCellKeyDown}
-    />
+    <>
+      <div className="text-center">
+        <h3 className="text-blue-500 text-3xl font-bold font-mono">Product Grid</h3>
+        <hr className="font-bold" />
+      </div>
+      <ProductGrid
+        products={products}
+        selectedProduct={selectedProduct}
+        focusedCell={focusedCell}
+        handleCellClick={handleCellClick}
+        handleCellKeyDown={handleCellKeyDown}
+      />
+    </>
   );
 };
 
